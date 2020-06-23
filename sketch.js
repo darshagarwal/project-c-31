@@ -15,6 +15,8 @@ function setup() {
   var canvas = createCanvas(480,800);
   engine = Engine.create();
   world = engine.world;
+
+  ground = new Ground(width/2,height,width,20);
   
   for(var k = 0; k<=width; k = k+80){
     divisions.push(new Division(k,height-divisionHeight/2,10,divisionHeight));
@@ -34,6 +36,10 @@ function draw() {
   background(255,255,255);  
   //divisions.Display();
   ground.Display();
-  plinkos.display();
+  for (var i = 0; i < plinkos.length; i++) {
+     
+    plinkos[i].display();
+    
+  }
   drawSprites();
 }
