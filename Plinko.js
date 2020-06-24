@@ -4,19 +4,18 @@ class Plinko {
             isStatic:true,
         }
 
-        
         this.body = Bodies.circle(x,y,10,options);
         World.add(world,this.body);   
 
     }
 
-    Display(){
-
+    display(){
+        var pos = this.body.position;
         push();
-        noStroke();
+        //noStroke();
         fill("white");
         ellipseMode(RADIUS);
-        ellipse(0,0,10,10);
+        ellipse(pos.x,pos.y,10,10);
         pop();
     }
 
