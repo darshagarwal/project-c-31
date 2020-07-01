@@ -12,7 +12,7 @@ var ground;
 
 
 function setup() {
-  var canvas = createCanvas(480,800);
+  var canvas = createCanvas(872,800);
   engine = Engine.create();
   world = engine.world;
 
@@ -30,10 +30,14 @@ function setup() {
     plinkos.push(new Plinko(j,175))
   }
 
+  if(frameCount%60===0){
+    particles.push(new Partical(width/2-10,width/2+10),10,10)
+  }
+
 }
 
 function draw() {
-  background(255,255,255);  
+  background(0);  
   //divisions.Display();
   ground.Display();
   for (var i = 0; i < plinkos.length; i++) {
@@ -41,5 +45,12 @@ function draw() {
     plinkos[i].display();
     
   }
-  drawSprites();
+
+  for(var k=0;k<divisions.length;k++){
+      divisions[k].Display();
+  }
+
+  particles.Display();
+
+  drawSprites(); 
 }
