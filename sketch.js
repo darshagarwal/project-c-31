@@ -30,15 +30,16 @@ function setup() {
     plinkos.push(new Plinko(j,175))
   }
 
-  if(frameCount%60===0){
+ /* if(frameCount%60===0){
     particles.push(new Partical(width/2-10,width/2+10),10,10)
-  }
+  }*/
 
 }
 
 function draw() {
   background(0);  
   //divisions.Display();
+  Engine.update(engine);
   ground.Display();
   for (var i = 0; i < plinkos.length; i++) {
      
@@ -46,11 +47,20 @@ function draw() {
     
   }
 
-  for(var k=0;k<divisions.length;k++){
-      divisions[k].Display();
-  }
+  
 
-  particles.Display();
+  if(frameCount%60===0){
+    particles.push(new Partical(random(width/2-30, width/2+30), 10,10));
+    //score++;
+  }
+  for (var j = 0; j < particles.length; j++) {
+   
+    particles[j].display();
+  }
+  for(var k=0;k<divisions.length;k++){
+    divisions[k].Display();
+}
+  //particles.display();
 
   drawSprites(); 
 }
