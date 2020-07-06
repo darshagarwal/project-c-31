@@ -30,6 +30,14 @@ function setup() {
     plinkos.push(new Plinko(j,175))
   }
 
+  for(var j = 40; j<=width;j=j+40){
+    plinkos.push(new Plinko(j,275));
+  }
+
+  for(var j = 15; j<=width;j=j+40){
+    plinkos.push(new Plinko(j,375));
+  }
+
  /* if(frameCount%60===0){
     particles.push(new Partical(width/2-10,width/2+10),10,10)
   }*/
